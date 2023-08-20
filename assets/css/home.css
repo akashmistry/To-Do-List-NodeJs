@@ -1,3 +1,144 @@
 body {
-  align-items: center;
+  /* text-align: center; */
+  background-color: #ffffff;
+  /* color: #ffdb58; */
+}
+.parentContainer {
+  display: flex;
+  justify-content: center;
+}
+.mainContainer {
+  width: 700px;
+  height: 900px;
+  background-color: #000000;
+
+  margin-top: 20px;
+  border-radius: 20px;
+
+  border: rgb(255, 213, 0);
+  border-style: solid;
+  border-width: 5px;
+}
+
+.upperContainer {
+  height: 200px;
+
+  background-color: rgb(255, 213, 0);
+
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+h1 {
+  color: #000000;
+  margin: 0px;
+  font-family: Arial;
+  font-weight: 100;
+  padding-top: 30px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.floatingInput {
+  height: 200px;
+  width: 650px;
+  margin-left: 25px;
+  margin-top: -100px;
+  border-radius: 20px;
+  background-color: rgb(255, 213, 0);
+  border: #000000;
+  border-style: solid;
+  border-width: 5px;
+
+  /* DETAILS */
+}
+form {
+  padding: 20px;
+}
+input:focus {
+  outline-width: 0;
+}
+select:focus {
+  outline-width: 0;
+}
+.inputs {
+  background-color: rgb(255, 213, 0);
+  border: #000000;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+#desc {
+  width: 96%;
+  margin-top: 6px;
+}
+.catndate {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.catndate input {
+  width: 276px;
+}
+.catndate select {
+  width: 300px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+#deleteBtn {
+  color: rgb(255, 213, 0);
+  background-color: black;
+  border: solid;
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-size: 20px;
+}
+button {
+  margin-top: 15px;
+  width: 300px;
+}
+p {
+  color: white;
+}
+ul {
+  max-height: 550px;
+  overflow: scroll;
+}
+li {
+  border-radius: 20px;
+  padding: 0px 20px;
+  margin-right: 35px;
+  margin-bottom: 10px;
+  background-color: rgb(255, 213, 0);
+  font-family: Arial;
+}
+.taskncat {
+  display: flex;
+  justify-content: space-between;
+}
+#description {
+  color: #000000;
+}
+#category {
+  color: #000000;
+  border-style: solid;
+  border-width: 2px;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+#date {
+  color: #000000;
+  margin-top: 0px;
+  padding-bottom: 15px;
+}
+.datencheck {
+  display: flex;
+  justify-content: space-between;
+}
+.datencheck input {
+  margin-top: -28px;
+  width: 20px;
 }

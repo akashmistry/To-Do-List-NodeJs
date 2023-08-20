@@ -5,11 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
+
     <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
-    <h1>Todo App</h1>
-    <hr />
+    <div class="parentContainer">
+      <!-- EVERYTHING WILL CONTAIN IN THE MAIN CONTAINER -->
+      <div class="mainContainer">
+        <div class="upperContainer">
+          <h1>TODO List</h1>
+        </div>
+        <div class="floatingInput">
+          <form action="/add-task" method="post">
+            <input
+              id="desc"
+              class="inputs"
+              type="text"
+              name="description"
+              placeholder="Type here..."
+            />
+            <div class="catndate">
+              <select class="inputs" name="category" id="">
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="school">School</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="other">Other</option>
+              </select>
+
+              <input class="inputs" type="date" name="dueDate" />
+            </div>
+            <div class="buttons">
+              <button class="inputs" type="submit">Add Task</button>
+              <button id="deleteBtn" type="button">Delete</button>
+            </div>
+          </form>
+        </div>
+        <div class="taskLists">
+          <ul>
+            <% for(let i of todo_list){ %>
+            <li>
+              <div class="taskncat">
+                <p id="description"><%= i.description%></p>
+                <p id="category"><%= i.category%></p>
+              </div>
+              <div class="datencheck">
+                <p id="date"><%= i.dueDate%></p>
+                <input
+                  type="checkbox"
+                  class="select-task"
+                  id="checkbox"
+                  name="<%= i._id%>"
+                />
+              </div>
+            </li>
+            <%}%>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <script src="/js/index.js"></script>
   </body>
 </html>
