@@ -1,3 +1,5 @@
 console.log("dsadsssssa");
-const date = document.getElementById("date");
-date.innerText = date.innerText.slice(4, 15);
+const date = document.querySelectorAll("#date");
+for (const i of date) {
+  i.innerText = i.innerText.slice(4, 15);
+}
