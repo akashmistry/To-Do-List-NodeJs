@@ -15,4 +15,6 @@ router.post("/add-task", homeController.add);
 
 //DELETE TASK
 
+router.get("/delete_task", homeController.delete);
+
 module.exports = router;

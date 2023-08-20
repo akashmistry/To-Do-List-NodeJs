@@ -37,32 +37,35 @@
             </div>
             <div class="buttons">
               <button class="inputs" type="submit">Add Task</button>
-              <button id="deleteBtn" type="button">Delete</button>
             </div>
           </form>
         </div>
         <div class="taskLists">
-          <ul>
-            <% for(let i of todo_list){ %>
-            <li>
-              <div class="taskncat">
-                <p id="description"><%= i.description%></p>
-                <p id="category"><%= i.category%></p>
-              </div>
-              <div class="datencheck">
-                <p id="date"><%= i.dueDate%></p>
-                <input
-                  type="checkbox"
-                  class="select-task"
-                  id="checkbox"
-                  name="<%= i._id%>"
-                />
-              </div>
-            </li>
-            <%}%>
-          </ul>
-        </div>
-      </div>
+          <form action="/delete_task" method="get">
+            <button id="deleteBtn" type="submit">Delete</button>
+
+            <ul>
+              <% for(let i of todo_list){ %>
+                <li>
+                  <div class="taskncat">
+                    <p id="description"><%= i.description%></p>
+                    <p id="category"><%= i.category%></p>
+                  </div>
+                  <div class="datencheck">
+                    <p id="date"><%= i.dueDate%></p>
+                    <input
+                    type="checkbox"
+                    class="select-task"
+                    id="checkbox"
+                    name="<%= i._id%>"
+                    />
+                  </div>
+                </li>
+                <%}%>
+              </ul>
+            </div>
+          </form>
+          </div>
     </div>
 
     <script src="/js/index.js"></script>

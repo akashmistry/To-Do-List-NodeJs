@@ -26,3 +26,24 @@ module.exports.add = function (req, res) {
       console.log("Error in add the List", err);
     });
 };
+
+module.exports.delete = function (req, res) {
+  //getting the id of selected boxes
+  let id = req.query;
+  console.log(id);
+
+  //gives the length of the selected checkboxes
+  let checkboxes = Object.keys(id).length;
+
+  //iterating over each selected boxes
+  for (let i = 0; i < checkboxes; i++) {
+    // find the item in the database using id and delte it
+    Todo.findByIdAndDelete(Object.keys(id)[i])
+      .then(() => {
+        return res.redirect("/");
+      })
+      .catch((err) => {
+        console.log("Error in deleteing the task: ", err);
+      });
+  }
+};
