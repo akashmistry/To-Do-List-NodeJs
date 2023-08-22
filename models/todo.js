@@ -1,4 +1,5 @@
 // MODELS
+// REQUIRING THE MONGOOSE FRAMEWORK
 const mongoose = require("mongoose");
 
 // STRUCTURE OF THE DOCUMENT / DATA TO BE STORED

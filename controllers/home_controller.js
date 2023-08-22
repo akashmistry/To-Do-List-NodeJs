@@ -2,7 +2,7 @@
 const Todo = require("../models/todo");
 
 // HOME CONTROLLER
-//
+// SHOW ALL THE TASKS
 module.exports.home = function (req, res) {
   Todo.find({})
     .then((tasks) => {
@@ -16,6 +16,7 @@ module.exports.home = function (req, res) {
     });
 };
 
+// ADD TASK CONTROLLER
 module.exports.add = function (req, res) {
   Todo.create(req.body)
     .then((todo) => {
@@ -27,23 +28,19 @@ module.exports.add = function (req, res) {
     });
 };
 
+// DELETE TASK CONTROLLER
 module.exports.delete = function (req, res) {
-  //getting the id of selected boxes
+  // EXTRACTING THE KEY
   let id = req.query;
-  console.log(id);
+  id = Object.keys(id);
 
-  //gives the length of the selected checkboxes
-  let checkboxes = Object.keys(id).length;
-
-  //iterating over each selected boxes
-  for (let i = 0; i < checkboxes; i++) {
-    // find the item in the database using id and delte it
-    Todo.findByIdAndDelete(Object.keys(id)[i])
-      .then(() => {
-        return res.redirect("/");
-      })
-      .catch((err) => {
-        console.log("Error in deleteing the task: ", err);
-      });
-  }
+  console.log("Deleting the task: ", id);
+  Todo.findByIdAndDelete(id)
+    .then(() => {
+      return res.redirect("/");
+    })
+    .catch((err) => {
+      console.log("Error in deleteing the task: ", err);
+    });
+  // }
 };
